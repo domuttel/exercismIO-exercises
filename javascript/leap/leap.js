@@ -1,17 +1,10 @@
-function Leap(year) {
+var Leap = function(year) {
   this.year = year;
 };
 
-Leap.prototype.isLeap = function(year) {
-  if (this.year % 4 != 0) {
-    return false;
-  }
-
-  if (this.year % 100 == 0 && this.year % 400 != 0) {
-    return false;
-  }
-
-  return true;
+Leap.prototype.isLeap = function() {
+	/* Test if year is leap year */
+	return this.year%4==0 && (this.year%100!=0 || this.year%400==0);
 }
 
 module.exports = Leap;
